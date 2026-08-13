@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music player</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/6b17700016.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <div class="main_div">
+    <div class="music_container">
+      <div class="scrolling-title">
+        <h2 id="title">Baazi</h2>
+      </div>
+      
+      <h3 id="artist">King</h3>
+      <div class="img_container">
+        <img src="covers/Baazi.jpg" alt="">
+      </div>
+      <audio src="songs/Baazi.mp3"></audio>
+      <div class="progressbar_container">
+        <div class="progress_duration">
+          <div id="currenttime">0:00</div>
+          <div id="total_duration">2:44</div>
+        </div>
+        <!-- <div class="progress_div" id="progress_div">
+          <div class="progress" id="progress"></div>
+        </div> -->
+        <div class="progress_div" id="progress_div">
+        <input type="range" name="range" id="myProgressbar" min="0" value="0" max="100">
+        </div>
+      </div>
+      <div class="music_controls">
+        <i class="fas fa-backward" title="Prev" id="prev"></i>
+        <i class="fas fa-play-circle main_button" title="Play" id="play"></i>
+        <i class="fas fa-forward" title="Next" id="next"></i>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>

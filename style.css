@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: "Jost",sans-serif;
+}
+
+.main_div{
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #f6f6f6; */
+  background-color: rgb(106, 145, 132);
+  display: grid;
+  place-items: center;
+}
+
+.music_container{
+  width: 350px;
+  height: 520px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px 5px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* position: relative; */
+}
+.scrolling-title {
+  width: 100%;
+  overflow: hidden; 
+  position: relative;
+}
+.music_container #title{
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  word-spacing: 2rem;
+  color: #171717;
+  margin: 10px 0 5px 0;
+  font-size: 35px;
+  font-weight: 500;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+    display: inline-block;
+    animation: marquee 11s linear infinite;
+    /* margin: 0;  */
+  
+}
+
+/* Keyframes for the scrolling effect */
+@keyframes marquee {
+  0% {
+      transform: translateX(50%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.music_container #artist{
+  color: #8a8181;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.img-container{
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
+img{
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 12px 30px 5px rgba(0, 0, 0, 0.4)
+}
+
+.music_controls .fas{
+  color: #111111;
+  font-size: 20px;
+  cursor: pointer;
+  filter: drop-shadow(0 12px 30px 5px rgba(0, 0, 0, 0.4));
+}
+
+.music_controls{
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.music_controls .main_button{
+  font-size: 4rem;
+}
+
+.music_controls .fas:hover{
+  color: grey;
+}
+
+.anime{
+  animation: rotatePlayer 6s  linear infinite;
+}
+
+@keyframes rotatePlayer {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+
+.progress_container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  height: 4px;
+}
+
+#myProgressbar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background-color: #404040;
+  border-radius: 2rem;
+  outline: none;
+  margin: 0;
+  position: relative;
+  transition: width .5s ease-in-out;
+}
+
+/* Webkit-based browsers */
+#myProgressbar::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #404040;
+}
+
+#myProgressbar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: #e6eae7; /* Spotify green */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px; /* Centers the thumb on the line */
+  transition: background-color 0.3s ease;
+}
+
+/* Firefox */
+#myProgressbar::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #404040;
+}
+
+#myProgressbar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background-color: #b4d0be;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles when thumb is active */
+#myProgressbar:active::-webkit-slider-thumb {
+  background-color: #b4d0be; /* Slightly brighter green when active */
+}
+
+#myProgressbar:active::-moz-range-thumb {
+  background-color: #b4d0be;
+}
+
+
+.progress_duration{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
